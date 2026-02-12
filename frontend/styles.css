@@ -1,0 +1,236 @@
+:root{
+  --bg: floralwhite;
+  --card: white;
+  --border: sandybrown;
+  --text: black;
+  --muted: gray;
+  --orange: darkorange;
+  --orange-dark: orangered;
+  --orange-soft: papayawhip;
+  --danger: crimson;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(900px 500px at 15% 10%, orange, transparent 60%),
+    radial-gradient(900px 500px at 85% 20%, lightsalmon, transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, white 100%);
+  min-height: 100vh;
+}
+
+.hero{
+  position: relative;
+  min-height: 42vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 14px;
+  text-align: center;
+  background: transparent;
+}
+
+.hero-title{
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: saddlebrown;
+  font-size: clamp(36px, 6vw, 72px);
+  text-transform: uppercase;
+}
+
+.menu-wrapper{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+.menu-btn{
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.06s ease, filter 0.2s ease;
+}
+
+.menu-btn:hover{ filter: brightness(1.03); }
+.menu-btn:active{ transform: translateY(1px); }
+
+.menu-options{
+  margin-top: 10px;
+  width: 220px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.menu-options button{
+  width: 100%;
+  margin: 8px 0 0 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: var(--orange-soft);
+  color: saddlebrown;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.menu-options button:hover{
+  filter: brightness(0.98);
+}
+
+header h1{
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.3px;
+  color: saddlebrown;
+}
+
+.card{
+  max-width: 900px;
+  margin: 18px auto;
+  padding: 18px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+h2, h3{
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  color: saddlebrown;
+}
+
+p{
+  margin: 10px 0 0 0;
+  color: var(--muted);
+}
+
+a{
+  color: saddlebrown;
+  text-decoration: none;
+  border-bottom: 1px dashed brown;
+}
+
+a:hover{ opacity: 0.9; }
+
+input{
+  width: 100%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--orange-soft);
+  color: var(--text);
+  outline: none;
+}
+
+input::placeholder{ color: gray; }
+
+input:focus{
+  border-color: orange;
+  background: white;
+}
+
+button{
+  width: 100%;
+  padding: 12px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.06s ease, filter 0.2s ease;
+}
+
+button:hover{ filter: brightness(1.03); }
+button:active{ transform: translateY(1px); }
+
+.row{
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 0.7fr 0.7fr;
+  gap: 10px;
+  align-items: end;
+}
+
+@media (max-width: 760px){
+  .row{ grid-template-columns: 1fr; }
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  background: white;
+  border: 1px solid var(--border);
+}
+
+#menu-container li span{ font-weight: 700; }
+
+#menu-container li::before{
+  content: "🍽️";
+  margin-right: 8px;
+}
+
+.admin-item{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.admin-item span{
+  flex: 1;
+  color: var(--text);
+  font-weight: 700;
+}
+
+li button{
+  width: auto;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.admin-item button:nth-child(3),
+#cart-list li button{
+  background: linear-gradient(135deg, crimson, firebrick);
+}
+
+.admin-item button:nth-child(2){
+  background: linear-gradient(135deg, orange, darkorange);
+}
+
+#cart-summary{
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--orange-soft);
+  border: 1px solid var(--border);
+  color: saddlebrown;
+}
