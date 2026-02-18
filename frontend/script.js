@@ -83,7 +83,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
       alert(msg);
       showLogin();
     })
-    .catch(() => alert("Error registering user"));
+    .catch(() => alert("eror registeing user"));
 });
 
 
@@ -139,7 +139,7 @@ function loadFoods() {
         left.textContent = `${food.name} - ${food.price}`;
 
         const addBtn = document.createElement("button");
-        addBtn.textContent = "Add to cart";
+        addBtn.textContent = "Add o cart";
         addBtn.style.width = "auto";
         addBtn.style.margin = "0";
         addBtn.onclick = () => addToCart(food);
@@ -210,7 +210,7 @@ function renderCart() {
   cartList.innerHTML = "";
 
   if (cart.length === 0) {
-    summary.textContent = "Cart is empty.";
+    summary.textContent = "cart isempty";
     return;
   }
 
@@ -225,7 +225,7 @@ function renderCart() {
     left.textContent = `${item.name} x${item.qty} - ${(item.price * item.qty).toFixed(2)}`;
 
     const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
+    removeBtn.textContent = "remove";
     removeBtn.style.width = "auto";
     removeBtn.style.margin = "0";
     removeBtn.onclick = () => removeFromCart(item.id);
@@ -241,7 +241,7 @@ function renderCart() {
 
 document.getElementById("checkout-btn").addEventListener("click", () => {
   if (cart.length === 0) {
-    alert("Cart is empty");
+    alert("cart is empty");
     return;
   }
 
@@ -332,4 +332,4 @@ function editFood(food) {
     });
 }
 
-hideAll(); 
+
